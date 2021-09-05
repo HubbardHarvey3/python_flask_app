@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for, render_template, request
+from flask import Flask, request, url_for, render_template, request, send_from_directory
 from markupsafe import escape
 
 app = Flask(__name__)
@@ -21,3 +21,7 @@ def login():
 @app.route('/user/<name>')
 def hello(name=None):
     return render_template('index.html.jinja', name=name)
+
+
+if __name__ == "__main__":
+    app.run()
